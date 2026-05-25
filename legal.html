@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>特定商取引法に基づく表記 | いいねピアノ</title>
+<style>
+  :root {
+    --beige: #f5f0e8;
+    --ivory: #faf8f2;
+    --warm: #ede7d9;
+    --accent: #8b6f47;
+    --accent-light: #c4a97d;
+    --text: #3a3028;
+    --text-muted: #7a6a58;
+    --white: #ffffff;
+    --border: #d8cfc0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, serif;
+    background-color: var(--ivory);
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent);
+  }
+
+  .hero {
+    background-color: var(--beige);
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: var(--text);
+    letter-spacing: 0.06em;
+  }
+
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+  }
+
+  .notice-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    line-height: 2;
+    background-color: var(--warm);
+    border-radius: 4px;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .table-wrapper {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .tokusho-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  .tokusho-table th,
+  .tokusho-table td {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.9;
+  }
+
+  .tokusho-table th {
+    width: 200px;
+    background-color: var(--beige);
+    color: var(--accent);
+    font-weight: normal;
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .tokusho-table td {
+    background-color: var(--white);
+    color: var(--text-muted);
+  }
+
+  .tokusho-table tr:last-child th,
+  .tokusho-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .tokusho-table ul {
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+
+  .tokusho-table ul li {
+    margin-bottom: 0.4rem;
+  }
+
+  .tokusho-table ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* メールアドレス画像 */
+  .email-img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .footer-note {
+    margin-top: 2.5rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 2;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 2.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--accent-light);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .back-link:hover { opacity: 0.7; }
+
+  footer {
+    background-color: var(--beige);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 1.4rem; }
+
+    .tokusho-table,
+    .tokusho-table tbody,
+    .tokusho-table tr,
+    .tokusho-table th,
+    .tokusho-table td {
+      display: block;
+      width: 100%;
+    }
+
+    .tokusho-table th {
+      white-space: normal;
+      border-bottom: none;
+      padding: 1rem 1.2rem 0.4rem;
+    }
+
+    .tokusho-table td {
+      padding: 0.4rem 1.2rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tokusho-table tr:last-child td {
+      border-bottom: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="nav-logo">いいねピアノ</a>
+    <ul class="nav-links">
+      <li><a href="index.html">トップ</a></li>
+      <li><a href="lesson.html">レッスンについて</a></li>
+      <li><a href="profile.html">講師プロフィール</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>特定商取引法に基づく表記</h1>
+</div>
+
+<div class="content">
+
+  <p class="notice-text">
+    特定商取引に関する法律（特定商取引法）第11条に基づき、以下の事項を表記します。
+  </p>
+
+  <div class="table-wrapper">
+    <table class="tokusho-table">
+      <tbody>
+        <tr>
+          <th>屋号</th>
+          <td>いいねピアノ</td>
+        </tr>
+        <tr>
+          <th>講師・運営者</th>
+          <td>小江 敦子</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>〒530-0001<br>大阪府大阪市北区梅田1丁目2番2号<br>大阪駅前第2ビル12-12</td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td>請求があった場合に遅滞なく開示いたします。</td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td>
+            <svg class="email-img" xmlns="http://www.w3.org/2000/svg" width="200" height="22" viewBox="0 0 200 22" aria-label="info@iinepiano.com">
+              <text x="0" y="17" font-family="Hiragino Mincho ProN, YuMincho, serif" font-size="14" fill="#7a6a58">info@iinepiano.com</text>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <th>サービス内容</th>
+          <td>オンラインピアノレッスン（Zoom使用）</td>
+        </tr>
+        <tr>
+          <th>レッスン料金</th>
+          <td>
+            無料体験レッスン：無料（30分・初回限定）<br>
+            通常レッスン：3,000円（30分）
+          </td>
+        </tr>
+        <tr>
+          <th>支払い方法</th>
+          <td>
+            銀行振込（前払い）<br>
+            ※お振込先はゆうちょ銀行です。振込手数料はお客様のご負担となります。
+          </td>
+        </tr>
+        <tr>
+          <th>レッスン開始時期</th>
+          <td>お申し込み後、日程調整の上実施いたします。</td>
+        </tr>
+        <tr>
+          <th>キャンセルについて</th>
+          <td>
+            <ul>
+              <li>レッスン開始時刻までにご連絡いただいた場合は、振替レッスンにて対応いたします。返金はいたしません。</li>
+              <li>レッスン開始時刻を過ぎてのキャンセルはお受けできません。その際はレッスンを実施したものとみなします。</li>
+              <li>講師都合によるキャンセルの場合は、全額返金いたします。</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>振替レッスンについて</th>
+          <td>振替レッスンの期限は設けておりません。</td>
+        </tr>
+        <tr>
+          <th>遅刻について</th>
+          <td>遅刻された場合、残り時間でのレッスンとなります。延長はいたしません。</td>
+        </tr>
+        <tr>
+          <th>返金について</th>
+          <td>講師都合によるキャンセルの場合を除き、返金はいたしません。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="footer-note">※本ページの内容は予告なく変更される場合があります。</p>
+
+  <a href="index.html" class="back-link">← トップページへ戻る</a>
+
+</div>
+
+<footer>
+  <p>© 2026 いいねピアノ</p>
+</footer>
+
+</body>
+</html>
