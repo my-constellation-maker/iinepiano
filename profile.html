@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>講師プロフィール | いいねピアノ</title>
+<style>
+  :root {
+    --beige: #f5f0e8;
+    --ivory: #faf8f2;
+    --warm: #ede7d9;
+    --accent: #8b6f47;
+    --accent-light: #c4a97d;
+    --text: #3a3028;
+    --text-muted: #7a6a58;
+    --white: #ffffff;
+    --border: #d8cfc0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, serif;
+    background-color: var(--ivory);
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--accent);
+  }
+
+  .hero {
+    background-color: var(--beige);
+    text-align: center;
+    padding: 5rem 2rem 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: var(--text);
+    letter-spacing: 0.1em;
+  }
+
+  .section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--accent-light);
+    margin-bottom: 1.2rem;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .profile-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 2.2;
+  }
+
+  .stance-box {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem 2.8rem;
+  }
+
+  .stance-box p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 2.2;
+    letter-spacing: 0.04em;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: var(--white);
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+    line-height: 2;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 3rem;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    font-family: inherit;
+    border-radius: 2px;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+
+  .cta-btn:hover {
+    background-color: #7a5f3a;
+    transform: translateY(-1px);
+  }
+
+  footer {
+    background-color: var(--beige);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 1.5rem; }
+    .stance-box { padding: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="nav-logo">いいねピアノ</a>
+    <ul class="nav-links">
+      <li><a href="index.html">トップ</a></li>
+      <li><a href="lesson.html">レッスンについて</a></li>
+      <li><a href="profile.html" class="active">講師プロフィール</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>講師プロフィール</h1>
+</div>
+
+<section class="section">
+  <p class="section-label">Profile</p>
+  <p class="profile-text">幼少期よりピアノを始め、大学でも引き続きピアノを学ぶかたわら、リトミックを専門的に修める。音楽教室での指導を経て、学校教育の場でも指導。現在まで約30年、幼いお子様から大人の方まで一対一でレッスンを続けております。</p>
+</section>
+
+<hr class="divider">
+
+<section class="section">
+  <p class="section-label">Lesson Style</p>
+  <div class="stance-box">
+    <p>ピアノを通して、生徒さんのことを大切にさせていただきながら、お一人おひとりに合ったレッスンを進めてまいります。</p>
+  </div>
+</section>
+
+<div class="cta-section">
+  <p>まずはお気軽にご相談ください。<br>無料体験レッスン（30分）から始められます。</p>
+  <a href="contact.html" class="cta-btn">お問い合わせはこちら</a>
+</div>
+
+<footer>
+  <p>© 2026 いいねピアノ</p>
+</footer>
+
+</body>
+</html>
