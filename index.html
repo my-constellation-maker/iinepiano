@@ -123,7 +123,11 @@
       grid-template-columns: 1fr 1fr 1fr;
       gap: 16px;
     }
-
+    @media (max-width: 640px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
     .card {
       background: var(--white);
       border: 1px solid var(--beige-dark);
