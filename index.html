@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>いいねピアノ｜オンラインピアノレッスン</title>
+  <style>
+    :root {
+      --beige-light: #FAF8F5;
+      --beige-mid: #F2EDE6;
+      --beige-dark: #DDD5C8;
+      --brown-soft: #A89080;
+      --brown-deep: #6B5040;
+      --white: #FFFFFF;
+      --text-main: #3D3028;
+      --text-muted: #7A6A5A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--beige-light);
+      font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Yu Mincho", "游明朝", serif;
+      color: var(--text-main);
+      line-height: 1.85;
+    }
+
+    /* ナビゲーション */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--beige-dark);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--brown-deep);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links a:hover {
+      color: var(--brown-deep);
+    }
+
+    /* ヒーロー */
+    .hero {
+      background: var(--white);
+      padding: 88px 40px 72px;
+      text-align: center;
+      border-bottom: 1px solid var(--beige-dark);
+    }
+
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--brown-deep);
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 2;
+      letter-spacing: 0.03em;
+    }
+
+    /* カードセクション */
+    .cards-section {
+      padding: 64px 40px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: "Hiragino Mincho ProN", serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      color: var(--brown-deep);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--beige-dark);
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--beige-dark);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--beige-dark);
+      border-radius: 2px;
+      padding: 28px 24px;
+    }
+
+    .card-num {
+      font-family: "Hiragino Mincho ProN", serif;
+      font-size: 11px;
+      color: var(--brown-soft);
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 2;
+      color: var(--text-main);
+      letter-spacing: 0.03em;
+    }
+
+    /* CTAセクション */
+    .cta-section {
+      text-align: center;
+      padding: 64px 40px 72px;
+      background: var(--white);
+      border-top: 1px solid var(--beige-dark);
+    }
+
+    .cta-section p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 2;
+      letter-spacing: 0.03em;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--brown-deep);
+      color: var(--beige-light);
+      font-family: "Hiragino Mincho ProN", serif;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      padding: 16px 48px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      background: #7A6050;
+    }
+
+    /* フッター */
+    footer {
+      background: var(--beige-mid);
+      border-top: 1px solid var(--beige-dark);
+      padding: 28px 40px;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: "Hiragino Mincho ProN", serif;
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">いいねピアノ</div>
+  <ul class="nav-links">
+    <li><a href="#">トップ</a></li>
+    <li><a href="#">レッスンについて</a></li>
+    <li><a href="#">講師プロフィール</a></li>
+    <li><a href="#">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <h1>お一人おひとりに合わせたピアノレッスンを、一対一で</h1>
+  <p class="hero-sub">ピアノに触れるのが初めての方も、久しぶりの方も、<br>オンラインピアノレッスンで丁寧にサポートいたします。</p>
+</div>
+
+<div class="cards-section">
+  <p class="section-label">いいねピアノの3つのこと</p>
+  <div class="card-grid">
+    <div class="card">
+      <p class="card-num">01</p>
+      <p>あなたのペースと目標に合わせて、レッスンを進めてまいります。</p>
+    </div>
+    <div class="card">
+      <p class="card-num">02</p>
+      <p>楽譜でも、耳コピでも、動画を見ながらでも。あなたが弾きやすい方法で、丁寧にサポートいたします。</p>
+    </div>
+    <div class="card">
+      <p class="card-num">03</p>
+      <p>お気軽に、無料体験レッスン（30分）から始めてみませんか。</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <p>まずはお気軽にご相談ください。<br>無料体験レッスン（30分）から始められます。</p>
+  <button class="cta-btn">お問い合わせはこちら</button>
+</div>
+
+<footer>
+  <p>© 2026 いいねピアノ</p>
+</footer>
+
+</body>
+</html>
