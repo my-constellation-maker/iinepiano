@@ -50,9 +50,24 @@
       list-style: none;
     }
     @media (max-width: 640px) {
+        .hamburger {
+            display: block;
+        }
   .nav-links {
     display: none;
   }
+  .nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  padding: 24px 40px;
+  gap: 24px;
+  border-bottom: 1px solid var(--beige-dark);
+}
 }
     .nav-links a {
       font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
@@ -128,9 +143,16 @@
       gap: 16px;
     }
     @media (max-width: 640px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
+        .card-grid {
+                grid-template-columns: 1fr;
+            }
+}
+
+@media (min-width: 641px) {
+.card p {
+    font-size: 13px;
+    line-height: 1.8;
+}
 }
     .card {
       background: var(--white);
@@ -186,7 +208,15 @@
     .cta-btn:hover {
       background: #7A6050;
     }
-
+/* ハンバーガーメニュー */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--brown-deep);
+}
     /* フッター */
     footer {
       background: var(--beige-mid);
@@ -213,11 +243,12 @@
     <li><a href="profile.html">講師プロフィール</a></li>
     <li><a href="contact.html">お問い合わせ</a></li>
   </ul>
+  <button class="hamburger" id="hamburger">&#9776;</button>
 </nav>
 
 <div class="hero">
   <h1>お一人おひとりに合わせたピアノレッスンを、一対一で</h1>
-  <p class="hero-sub">ピアノに触れるのが初めての方も、久しぶりの方も、<br>オンラインピアノレッスンで丁寧にサポートいたします。</p>
+  <p class="hero-sub">ピアノに触れるのが初めての方も、久しぶりの方も<br>オンラインピアノレッスンで丁寧にサポートいたします。</p>
 </div>
 
 <div class="cards-section">
@@ -225,22 +256,22 @@
   <div class="card-grid">
     <div class="card">
       <p class="card-num">01</p>
-      <p>あなたのペースと目標に合わせて、レッスンを進めてまいります。</p>
+      <p>あなたのペースと目標に合わせて<br>レッスンを進めてまいります。</p>
     </div>
     <div class="card">
       <p class="card-num">02</p>
-      <p>楽譜でも、耳コピでも、動画を見ながらでも。あなたが弾きやすい方法で、丁寧にサポートいたします。</p>
+      <p>楽譜でも、耳コピでも、動画を見ながらでも。<br>弾きやすい方法で丁寧にサポートいたします。</p>
     </div>
     <div class="card">
       <p class="card-num">03</p>
-      <p>お気軽に、無料体験レッスン（30分）から始めてみませんか。</p>
+      <p>お気軽に、無料体験レッスン（30分）から<br>始めてみませんか。</p>
     </div>
   </div>
 </div>
 
 <div class="cta-section">
   <p>まずはお気軽にご相談ください。<br>無料体験レッスン（30分）から始められます。</p>
-  <button class="cta-btn">お問い合わせはこちら</button>
+  <a href="contact.html" class="cta-btn">お問い合わせはこちら</a>
 </div>
 
 <footer>
@@ -248,5 +279,12 @@
   <p><a href="legal.html" style="color: var(--text-muted); text-decoration: none; font-size: 11px;">特定商取引法に基づく表記</a></p>
 </footer>
 
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('open');
+  });
+  </script>
 </body>
 </html>
