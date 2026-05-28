@@ -203,9 +203,29 @@
     color: var(--text-muted);
     letter-spacing: 0.08em;
   }
-
+  .hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--brown-deep);
+}
   @media (max-width: 640px) {
     .nav-links { display: none; }
+    .hamburger { display: block; }
+    .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 24px 40px;
+    gap: 24px;
+    border-bottom: 1px solid var(--beige-dark);
+  }
     .hero h1 { font-size: 1.5rem; }
     .contact-card { padding: 2rem 1.5rem; }
   }
@@ -222,6 +242,7 @@
       <li><a href="profile.html">講師プロフィール</a></li>
       <li><a href="contact.html" class="active">お問い合わせ</a></li>
     </ul>
+    <button class="hamburger" id="hamburger">&#9776;</button>
   </nav>
 </header>
 
@@ -259,7 +280,14 @@
 
 <footer>
   <p>© 2026 いいねピアノ</p>
+  <p><a href="legal.html" style="color: var(--text-muted); text-decoration: none; font-size: 11px;">特定商取引法に基づく表記</a></p>
 </footer>
-
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('open');
+  });
+  </script>
 </body>
 </html>
